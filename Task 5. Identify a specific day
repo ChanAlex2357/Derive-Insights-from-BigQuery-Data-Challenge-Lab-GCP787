@@ -1,0 +1,7 @@
+SELECT date
+FROM `bigquery-public-data.covid19_open_data.covid19_open_data`
+WHERE country_name='Italy'
+GROUP BY date
+HAVING SUM(cumulative_deceased) > 8000
+ORDER BY date ASC
+LIMIT 1;
